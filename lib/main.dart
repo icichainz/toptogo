@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:keeper/app/pages/add_review.dart';
+import 'package:keeper/app/pages/hot_page.dart';
 import 'package:keeper/app/pages/search_page.dart';
+import 'package:keeper/utils/shared_pref.dart';
 import './app/pages/home_page.dart';
 import './app/pages/review_page.dart';
 import './app/pages/account_page.dart';
 import './app/pages/explore_page.dart';
 
-void main() {
+void main()  {
+  // Initialize the shared preferences services.
+  SharedPref.init() ;
+  // Run the application.
   runApp(const MyApp());
 }
 
@@ -21,6 +26,7 @@ class MyApp extends StatelessWidget {
       title: 'TopTrip',
       theme: ThemeData(primarySwatch: Colors.deepPurple),
       home: const MyHomePage(title: 'TopTrip'),
+     
     );
   }
 }
@@ -35,7 +41,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+
   int currentIdex = 0;
 
   void changeIndex(index) {
@@ -47,9 +53,11 @@ class _MyHomePageState extends State<MyHomePage> {
   final pagesList = const [
     HomePage(),
     ExplorePage(),
+    HotPage(),
     ReviewPage(),
     AccountPage()
   ];
+
   final navItem = [
     const BottomNavigationBarItem(
         icon: Icon(Icons.home_outlined), label: 'Acceuille'),
@@ -62,6 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
     const BottomNavigationBarItem(
         icon: Icon(Icons.supervised_user_circle_outlined), label: 'Compte')
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

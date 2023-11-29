@@ -5,11 +5,74 @@ class AccountPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      Card(color:Colors.grey.shade200, child: ListTile(title: Text("Gestion de compte "),leading: Icon(Icons.account_circle_outlined,size: 50.0,color: Colors.deepPurple,),),)
-    ],);
+    return Column(
+      children: [
+        //Gestion de compte
+        Card(
+          color: Colors.grey.shade100,
+          child: const ListTile(
+            title: Text("Gestion de compte "),
+            leading: Icon(
+              Icons.account_circle_outlined,
+              size: 30.0,
+              color: Colors.deepPurple,
+            ),
+          ),
+        ),
+        // Recompense et programme de fid&lité
+        Card(
+          color: Colors.grey.shade100,
+          child: const ListTile(
+            title: Text("Recompense et fidélité"),
+            leading: Icon(
+              Icons.money,
+              size: 30.0,
+              color: Colors.deepPurple,
+            ),
+          ),
+        ),
+        // Questions posés au étavlissements.
+        Card(
+          color: Colors.grey.shade100,
+          child: const ListTile(
+            title: Text("Questions possées au établisements"),
+            leading: Icon(
+              Icons.question_answer_outlined,
+              size: 30.0,
+              color: Colors.deepPurple,
+            ),
+          ),
+        ),
+        // Aide 
+        Card(
+          color: Colors.grey.shade100,
+          child: const ListTile(
+            title: Text("Aides"),
+            leading: Icon(
+              Icons.help_outline,
+              size: 30.0,
+              color: Colors.deepPurple,
+            ),
+          ),
+        ),
+
+        //
+          Card(
+          color: Colors.grey.shade100,
+          child: const ListTile(
+            title: Text("Déconnecté",style: TextStyle(color: Colors.redAccent),),
+            leading: Icon(
+              Icons.help_outline,
+              size: 30.0,
+              color: Colors.redAccent,
+            ),
+          ),
+        ),
+      ],
+    );
   }
 }
+
 
 /*
 * - Recompense et programme de fidélité.
